@@ -1,3 +1,4 @@
+import { classNames } from "helpers/classNames";
 import { AboutPageAsync } from "pages/AboutPage/AboutPageAsync";
 import { MainPageAsync } from "pages/MainPage/MainPageAsync";
 import { Suspense} from "react";
@@ -8,7 +9,7 @@ import { useTheme } from "theme/useTheme";
 export const App = () => {
   const {theme, toggleTheme} = useTheme();
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames('app', {hovered: false, selected: true}, [theme, 'cls2', 'cls3'])}>
       <button onClick={toggleTheme}>Toggle Theme</button>
       <Link to={"/"}>Home</Link>
       <Link to={"/about"}>About us</Link>
